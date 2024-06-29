@@ -37,12 +37,20 @@ struct AddGoalView: View {
 
                 Section(header: Text("Tracker Information")) {
                     TextField("Track by Email", text: $trackerEmail)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
+                        .textInputAutocapitalization(.never)
+                }
+
+                Section {
                     TextField("Amount", text: $amount)
                         .keyboardType(.decimalPad)
                 }
 
-                Button(action: addGoal) {
-                    Text("Add Goal")
+                Section {
+                    Button(action: addGoal) {
+                        Text("Add Goal")
+                    }
                 }
             }
             .navigationBarTitle("Add a Goal")
@@ -60,7 +68,7 @@ struct AddGoalView: View {
             title: title,
             type: selectedType,
             details: details,
-            trackerEmail: trackerEmail,
+            trackerEmail: trackerEmail.lowercased(), // Ensure email is stored in lowercase
             amount: amount,
             isActive: false,
             userId: userId,
