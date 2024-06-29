@@ -40,17 +40,17 @@ struct AddGoalView: View {
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                         .textInputAutocapitalization(.never)
-                }
-
-                Section {
                     TextField("Amount", text: $amount)
                         .keyboardType(.decimalPad)
                 }
 
-                Section {
-                    Button(action: addGoal) {
-                        Text("Add Goal")
-                    }
+                Button(action: addGoal) {
+                    Text("Add Goal")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
             }
             .navigationBarTitle("Add a Goal")
