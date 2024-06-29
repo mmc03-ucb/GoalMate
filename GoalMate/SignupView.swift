@@ -12,6 +12,12 @@ struct SignUpView: View {
 
     var body: some View {
         VStack {
+            Spacer()
+            Image("GoalMate Logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
+                .padding(.bottom, 20)
             TextField("Name", text: $name)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
@@ -50,6 +56,7 @@ struct SignUpView: View {
                     .foregroundColor(.blue)
             }
             .padding()
+            Spacer()
         }
         .padding()
     }
