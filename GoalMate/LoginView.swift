@@ -60,7 +60,7 @@ struct LoginView: View {
                         .padding()
                 }
 
-                NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn)) {
+                NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn, showSignUp: $showSignUp)) {
                     Text("Don't have an account? Sign Up")
                         .foregroundColor(.blue)
                 }

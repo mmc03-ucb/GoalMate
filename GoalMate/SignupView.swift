@@ -1,10 +1,3 @@
-//
-//  SignupView.swift
-//  GoalMate
-//
-//  Created by MUQUEET MOHSEN CHOWDHURY on 29/6/24.
-//
-
 import SwiftUI
 import FirebaseAuth
 
@@ -35,6 +28,7 @@ struct SignUpView: View {
             SecureField("Confirm Password", text: $confirmPassword)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+
             if !errorMessage.isEmpty {
                 Text(errorMessage)
                     .foregroundColor(.red)
@@ -51,7 +45,7 @@ struct SignUpView: View {
                     .padding()
             }
 
-            NavigationLink(destination: LoginView(isLoggedIn: $isLoggedIn)) {
+            NavigationLink(destination: LoginView(isLoggedIn: $isLoggedIn, showSignUp: $showSignUp)) {
                 Text("Already have an account? Log In")
                     .foregroundColor(.blue)
             }
