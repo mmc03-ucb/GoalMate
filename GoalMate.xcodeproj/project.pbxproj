@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		859A890B2C2FDB5200C311F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 859A890A2C2FDB5200C311F2 /* GoogleService-Info.plist */; };
+		859A890E2C2FDB9D00C311F2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A890D2C2FDB9D00C311F2 /* MainView.swift */; };
+		859A89102C2FDBB000C311F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A890F2C2FDBB000C311F2 /* LoginView.swift */; };
+		859A89122C2FDBC600C311F2 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A89112C2FDBC600C311F2 /* SignupView.swift */; };
 		85C329F12C2ED45B00678D85 /* GoalMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C329F02C2ED45B00678D85 /* GoalMateApp.swift */; };
 		85C329F32C2ED45B00678D85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C329F22C2ED45B00678D85 /* ContentView.swift */; };
 		85C329F52C2ED45B00678D85 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C329F42C2ED45B00678D85 /* Item.swift */; };
@@ -15,6 +19,9 @@
 		85C32A042C2ED46000678D85 /* GoalMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C32A032C2ED46000678D85 /* GoalMateTests.swift */; };
 		85C32A0E2C2ED46000678D85 /* GoalMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C32A0D2C2ED46000678D85 /* GoalMateUITests.swift */; };
 		85C32A102C2ED46000678D85 /* GoalMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C32A0F2C2ED46000678D85 /* GoalMateUITestsLaunchTests.swift */; };
+		A9D879A4558AD9F944B2F2A4 /* Pods_GoalMate_GoalMateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FDEEF580E4CC7C8BEDB9FE /* Pods_GoalMate_GoalMateUITests.framework */; };
+		BB5097BA649480DC2524A885 /* Pods_GoalMateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C60A636AFCD6019968B36C9 /* Pods_GoalMateTests.framework */; };
+		F92714D55711BAAE7F07226E /* Pods_GoalMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0571397D3F0053FEC6CF0C19 /* Pods_GoalMate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0571397D3F0053FEC6CF0C19 /* Pods_GoalMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoalMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		423B1090977550ED567916E5 /* Pods-GoalMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalMateTests.release.xcconfig"; path = "Target Support Files/Pods-GoalMateTests/Pods-GoalMateTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C96BC44D21CA62D907F4BF4 /* Pods-GoalMate-GoalMateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalMate-GoalMateUITests.debug.xcconfig"; path = "Target Support Files/Pods-GoalMate-GoalMateUITests/Pods-GoalMate-GoalMateUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		61FDEEF580E4CC7C8BEDB9FE /* Pods_GoalMate_GoalMateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoalMate_GoalMateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DF4D01D7F5733C4253A8591 /* Pods-GoalMateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalMateTests.debug.xcconfig"; path = "Target Support Files/Pods-GoalMateTests/Pods-GoalMateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7F4DCE3181B70B6CF2E8E4DA /* Pods-GoalMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalMate.debug.xcconfig"; path = "Target Support Files/Pods-GoalMate/Pods-GoalMate.debug.xcconfig"; sourceTree = "<group>"; };
+		859A890A2C2FDB5200C311F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		859A890D2C2FDB9D00C311F2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		859A890F2C2FDBB000C311F2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		859A89112C2FDBC600C311F2 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		85C329ED2C2ED45B00678D85 /* GoalMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C329F02C2ED45B00678D85 /* GoalMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMateApp.swift; sourceTree = "<group>"; };
 		85C329F22C2ED45B00678D85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +63,9 @@
 		85C32A092C2ED46000678D85 /* GoalMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoalMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C32A0D2C2ED46000678D85 /* GoalMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMateUITests.swift; sourceTree = "<group>"; };
 		85C32A0F2C2ED46000678D85 /* GoalMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8EE10B3D8DD44FE5F4D96865 /* Pods-GoalMate-GoalMateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalMate-GoalMateUITests.release.xcconfig"; path = "Target Support Files/Pods-GoalMate-GoalMateUITests/Pods-GoalMate-GoalMateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9C60A636AFCD6019968B36C9 /* Pods_GoalMateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoalMateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4E62325D0A21F062A27F79B /* Pods-GoalMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalMate.release.xcconfig"; path = "Target Support Files/Pods-GoalMate/Pods-GoalMate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F92714D55711BAAE7F07226E /* Pods_GoalMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5097BA649480DC2524A885 /* Pods_GoalMateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,12 +89,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D879A4558AD9F944B2F2A4 /* Pods_GoalMate_GoalMateUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		550310BFDD234098886B6352 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0571397D3F0053FEC6CF0C19 /* Pods_GoalMate.framework */,
+				61FDEEF580E4CC7C8BEDB9FE /* Pods_GoalMate_GoalMateUITests.framework */,
+				9C60A636AFCD6019968B36C9 /* Pods_GoalMateTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85C329E42C2ED45B00678D85 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +113,8 @@
 				85C32A022C2ED46000678D85 /* GoalMateTests */,
 				85C32A0C2C2ED46000678D85 /* GoalMateUITests */,
 				85C329EE2C2ED45B00678D85 /* Products */,
+				CDF8C7C64FCE23BBA942DCEB /* Pods */,
+				550310BFDD234098886B6352 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,7 +135,11 @@
 				85C329F22C2ED45B00678D85 /* ContentView.swift */,
 				85C329F42C2ED45B00678D85 /* Item.swift */,
 				85C329F62C2ED45F00678D85 /* Assets.xcassets */,
+				859A890A2C2FDB5200C311F2 /* GoogleService-Info.plist */,
 				85C329F82C2ED45F00678D85 /* Preview Content */,
+				859A890D2C2FDB9D00C311F2 /* MainView.swift */,
+				859A890F2C2FDBB000C311F2 /* LoginView.swift */,
+				859A89112C2FDBC600C311F2 /* SignupView.swift */,
 			);
 			path = GoalMate;
 			sourceTree = "<group>";
@@ -130,6 +169,19 @@
 			path = GoalMateUITests;
 			sourceTree = "<group>";
 		};
+		CDF8C7C64FCE23BBA942DCEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F4DCE3181B70B6CF2E8E4DA /* Pods-GoalMate.debug.xcconfig */,
+				B4E62325D0A21F062A27F79B /* Pods-GoalMate.release.xcconfig */,
+				5C96BC44D21CA62D907F4BF4 /* Pods-GoalMate-GoalMateUITests.debug.xcconfig */,
+				8EE10B3D8DD44FE5F4D96865 /* Pods-GoalMate-GoalMateUITests.release.xcconfig */,
+				7DF4D01D7F5733C4253A8591 /* Pods-GoalMateTests.debug.xcconfig */,
+				423B1090977550ED567916E5 /* Pods-GoalMateTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85C32A132C2ED46000678D85 /* Build configuration list for PBXNativeTarget "GoalMate" */;
 			buildPhases = (
+				E8326F2E4ABF98D192E86655 /* [CP] Check Pods Manifest.lock */,
 				85C329E92C2ED45B00678D85 /* Sources */,
 				85C329EA2C2ED45B00678D85 /* Frameworks */,
 				85C329EB2C2ED45B00678D85 /* Resources */,
+				1AADED29E373E1401A2B3453 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85C32A162C2ED46000678D85 /* Build configuration list for PBXNativeTarget "GoalMateTests" */;
 			buildPhases = (
+				0E8907A5A10094C294EBAB7B /* [CP] Check Pods Manifest.lock */,
 				85C329FB2C2ED45F00678D85 /* Sources */,
 				85C329FC2C2ED45F00678D85 /* Frameworks */,
 				85C329FD2C2ED45F00678D85 /* Resources */,
@@ -172,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85C32A192C2ED46000678D85 /* Build configuration list for PBXNativeTarget "GoalMateUITests" */;
 			buildPhases = (
+				5259F2B2F3C01F2E78BB2D54 /* [CP] Check Pods Manifest.lock */,
 				85C32A052C2ED46000678D85 /* Sources */,
 				85C32A062C2ED46000678D85 /* Frameworks */,
 				85C32A072C2ED46000678D85 /* Resources */,
+				F4DE4C2BE4F6A39FA108FBD4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +275,9 @@
 				Base,
 			);
 			mainGroup = 85C329E42C2ED45B00678D85;
+			packageReferences = (
+				859A890C2C2FDB6F00C311F2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 85C329EE2C2ED45B00678D85 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,6 +296,7 @@
 			files = (
 				85C329FA2C2ED45F00678D85 /* Preview Assets.xcassets in Resources */,
 				85C329F72C2ED45F00678D85 /* Assets.xcassets in Resources */,
+				859A890B2C2FDB5200C311F2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,13 +316,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E8907A5A10094C294EBAB7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoalMateTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AADED29E373E1401A2B3453 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoalMate/Pods-GoalMate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoalMate/Pods-GoalMate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoalMate/Pods-GoalMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5259F2B2F3C01F2E78BB2D54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoalMate-GoalMateUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8326F2E4ABF98D192E86655 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoalMate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4DE4C2BE4F6A39FA108FBD4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoalMate-GoalMateUITests/Pods-GoalMate-GoalMateUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoalMate-GoalMateUITests/Pods-GoalMate-GoalMateUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoalMate-GoalMateUITests/Pods-GoalMate-GoalMateUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		85C329E92C2ED45B00678D85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859A89122C2FDBC600C311F2 /* SignupView.swift in Sources */,
 				85C329F32C2ED45B00678D85 /* ContentView.swift in Sources */,
+				859A890E2C2FDB9D00C311F2 /* MainView.swift in Sources */,
 				85C329F52C2ED45B00678D85 /* Item.swift in Sources */,
+				859A89102C2FDBB000C311F2 /* LoginView.swift in Sources */,
 				85C329F12C2ED45B00678D85 /* GoalMateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +587,7 @@
 		};
 		85C32A142C2ED46000678D85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F4DCE3181B70B6CF2E8E4DA /* Pods-GoalMate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -428,6 +596,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GoalMate/Preview Content\"";
 				DEVELOPMENT_TEAM = J5Y9Y5A5H2;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -449,6 +618,7 @@
 		};
 		85C32A152C2ED46000678D85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4E62325D0A21F062A27F79B /* Pods-GoalMate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -457,6 +627,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GoalMate/Preview Content\"";
 				DEVELOPMENT_TEAM = J5Y9Y5A5H2;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -478,6 +649,7 @@
 		};
 		85C32A172C2ED46000678D85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DF4D01D7F5733C4253A8591 /* Pods-GoalMateTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +670,7 @@
 		};
 		85C32A182C2ED46000678D85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 423B1090977550ED567916E5 /* Pods-GoalMateTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -518,6 +691,7 @@
 		};
 		85C32A1A2C2ED46000678D85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C96BC44D21CA62D907F4BF4 /* Pods-GoalMate-GoalMateUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +710,7 @@
 		};
 		85C32A1B2C2ED46000678D85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EE10B3D8DD44FE5F4D96865 /* Pods-GoalMate-GoalMateUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -592,6 +767,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		859A890C2C2FDB6F00C311F2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 85C329E52C2ED45B00678D85 /* Project object */;
 }

@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  GoalMate
-//
-//  Created by MUQUEET MOHSEN CHOWDHURY on 28/6/24.
-//
-
 import SwiftUI
 import SwiftData
 
