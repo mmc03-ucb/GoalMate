@@ -10,6 +10,7 @@ import FirebaseAuth
 
 struct LoginView: View {
     @Binding var isLoggedIn: Bool
+    @Binding var showSignUp: Bool
     @State private var email = ""
     @State private var password = ""
     @State private var errorMessage = ""
@@ -24,6 +25,8 @@ struct LoginView: View {
             SecureField("Password", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                .disableAutocorrection(true)
+                .textContentType(.password)
 
             if !errorMessage.isEmpty {
                 Text(errorMessage)
@@ -42,8 +45,7 @@ struct LoginView: View {
             }
 
             Button(action: {
-                // Navigate to the signup view
-                // Implement navigation logic here if necessary
+                showSignUp = true
             }) {
                 Text("Don't have an account? Sign Up")
                     .foregroundColor(.blue)
@@ -66,6 +68,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(isLoggedIn: .constant(false))
+        LoginView(isLoggedIn: .constant(false), showSignUp: .constant(false))
     }
 }

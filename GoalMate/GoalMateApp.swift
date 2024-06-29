@@ -18,17 +18,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct GoalMateApp: App {
-    // Register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @State private var isLoggedIn = false
+    @State private var showSignUp = false
 
     var body: some Scene {
         WindowGroup {
             if isLoggedIn {
                 MainView(isLoggedIn: $isLoggedIn)
             } else {
-                LoginView(isLoggedIn: $isLoggedIn)
+                if showSignUp {
+                    SignUpView(isLoggedIn: $isLoggedIn, showSignUp: $showSignUp)
+                } else {
+                    LoginView(isLoggedIn: $isLoggedIn, showSignUp: $showSignUp)
+                }
             }
         }
     }
 }
+
