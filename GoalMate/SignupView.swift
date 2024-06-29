@@ -10,6 +10,7 @@ import FirebaseAuth
 
 struct SignUpView: View {
     @Binding var isLoggedIn: Bool
+    @Binding var showSignUp: Bool
     @State private var name = ""
     @State private var email = ""
     @State private var password = ""
@@ -29,10 +30,11 @@ struct SignUpView: View {
             SecureField("Password", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                .disableAutocorrection(true)
+                .textContentType(.newPassword)
             SecureField("Confirm Password", text: $confirmPassword)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
-
             if !errorMessage.isEmpty {
                 Text(errorMessage)
                     .foregroundColor(.red)
@@ -76,6 +78,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(isLoggedIn: .constant(false))
+        SignUpView(isLoggedIn: .constant(false), showSignUp: .constant(false))
     }
 }
