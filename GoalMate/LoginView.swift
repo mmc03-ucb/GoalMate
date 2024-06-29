@@ -9,65 +9,71 @@ struct LoginView: View {
     @State private var errorMessage = ""
 
     var body: some View {
-        NavigationView {
-            VStack {
-                TextField("Email", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .keyboardType(.emailAddress)
-                    .autocapitalization(.none)
-                SecureField("Password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-
-                if !errorMessage.isEmpty {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                        .padding()
-                }
-
-                Button(action: login) {
-                    Text("Login")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding()
-                }
-
-                Button(action: {
-                    loginWithTestCredentials(email: "test@test.com", password: "test12")
-                }) {
-                    Text("Test Login 1")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding()
-                        .background(Color.gray)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding()
-                }
-
-                Button(action: {
-                    loginWithTestCredentials(email: "test2@test.com", password: "test12")
-                }) {
-                    Text("Test Login 2")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding()
-                        .background(Color.gray)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding()
-                }
-
-                NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn, showSignUp: $showSignUp)) {
-                    Text("Don't have an account? Sign Up")
-                        .foregroundColor(.blue)
-                }
+        VStack {
+            Spacer()
+            Image("GoalMate Logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
+                .padding(.bottom, 20)
+            
+            TextField("Email", text: $email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+                .keyboardType(.emailAddress)
+                .autocapitalization(.none)
+            SecureField("Password", text: $password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+
+            if !errorMessage.isEmpty {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+
+            Button(action: login) {
+                Text("Login")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
+            }
+
+            Button(action: {
+                loginWithTestCredentials(email: "test@test.com", password: "test12")
+            }) {
+                Text("Test Login 1")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                    .background(Color.gray)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
+            }
+
+            Button(action: {
+                loginWithTestCredentials(email: "test2@test.com", password: "test12")
+            }) {
+                Text("Test Login 2")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                    .background(Color.gray)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
+            }
+
+            NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn,showSignUp: $showSignUp)) {
+                Text("Don't have an account? Sign Up")
+                    .foregroundColor(.blue)
             }
             .padding()
+            Spacer()
         }
+        .padding()
     }
 
     private func login() {

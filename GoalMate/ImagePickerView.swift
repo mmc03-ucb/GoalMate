@@ -1,10 +1,3 @@
-//
-//  ImagePickerView.swift
-//  GoalMate
-//
-//  Created by MUQUEET MOHSEN CHOWDHURY on 29/6/24.
-//
-
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {

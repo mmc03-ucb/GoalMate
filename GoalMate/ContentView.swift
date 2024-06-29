@@ -5,13 +5,11 @@ struct ContentView: View {
     @State private var showSignUp = false
 
     var body: some View {
-        NavigationView {
-            Group {
-                if isLoggedIn {
-                    DashboardView(isLoggedIn: $isLoggedIn)
-                } else {
-                    LoginView(isLoggedIn: $isLoggedIn, showSignUp: $showSignUp)
-                }
+        Group {
+            if isLoggedIn {
+                DashboardView(isLoggedIn: $isLoggedIn)
+            } else {
+                LoginView(isLoggedIn: $isLoggedIn, showSignUp: $showSignUp)
             }
         }
     }

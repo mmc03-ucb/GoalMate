@@ -14,38 +14,42 @@ struct DashboardView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    Section(header: Text("Active Goals")) {
-                        ForEach(activeGoals) { goal in
-                            NavigationLink(destination: GoalDetailView(goal: goal)) {
+            GeometryReader { geometry in
+                VStack {
+                    List {
+                        Section(header: Text("Active Goals")) {
+                            ForEach(activeGoals) { goal in
+                                NavigationLink(destination: GoalDetailView(goal: goal)) {
+                                    Text(goal.title)
+                                }
+                            }
+                        }
+
+                        Section(header: Text("Completed Goals")) {
+                            ForEach(completedGoals) { goal in
                                 Text(goal.title)
                             }
                         }
-                    }
 
-                    Section(header: Text("Completed Goals")) {
-                        ForEach(completedGoals) { goal in
-                            Text(goal.title)
+                        Section(header: Text("Tracking Requests")) {
+                            ForEach(trackingRequests) { request in
+                                NavigationLink(destination: TrackingDetailView(goal: request)) {
+                                    Text(request.title)
+                                }
+                            }
                         }
-                    }
 
-                    Section(header: Text("Tracking Requests")) {
-                        ForEach(trackingRequests) { request in
-                            NavigationLink(destination: TrackingDetailView(goal: request)) {
+                        Section(header: Text("Requests Tracked")) {
+                            ForEach(trackedRequests) { request in
                                 Text(request.title)
                             }
                         }
                     }
-
-                    Section(header: Text("Requests Tracked")) {
-                        ForEach(trackedRequests) { request in
-                            Text(request.title)
-                        }
-                    }
+                    .listStyle(GroupedListStyle())
+                    .frame(width: geometry.size.width, height: geometry.size.height)
                 }
             }
-            .navigationBarTitle("Dashboard")
+            .navigationBarTitle("Dashboard", displayMode: .inline)
             .navigationBarItems(leading: Button(action: logout) {
                 Text("Logout")
                     .foregroundColor(.red)
@@ -65,6 +69,7 @@ struct DashboardView: View {
                 listener?.remove()
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle()) // Ensures proper scaling on all devices
     }
 
     private func logout() {
@@ -95,7 +100,7 @@ struct DashboardView: View {
 
     private func setupListener() {
         guard let userId = Auth.auth().currentUser?.uid else { return }
-        
+
         listener = db.collection("goals")
             .whereField("userId", isEqualTo: userId)
             .addSnapshotListener { snapshot, error in
@@ -141,5 +146,11 @@ struct DashboardView: View {
                     )
                 }
             }
+    }
+}
+
+struct DashboardView_Previews: PreviewProvider {
+    static var previews: some View {
+        DashboardView(isLoggedIn: .constant(true))
     }
 }

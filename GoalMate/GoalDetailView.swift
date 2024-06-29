@@ -9,62 +9,74 @@ struct GoalDetailView: View {
     @State private var progressDetails: [String] = []
 
     var body: some View {
-        VStack {
-            Text(goal.title)
-                .font(.largeTitle)
-                .padding()
-
-            if let imageURL = imageURL {
-                AsyncImage(url: imageURL) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 200)
-                            .padding()
-                    } else if phase.error != nil {
-                        Text("Failed to load image")
-                            .foregroundColor(.red)
-                            .padding()
-                    } else {
-                        ProgressView()
-                            .frame(height: 200)
-                            .padding()
-                    }
-                }
-            }
-
+        ScrollView {
             VStack(alignment: .leading) {
-                Text("Progress Details:")
-                    .font(.headline)
+                Text(goal.title)
+                    .font(.largeTitle)
                     .padding(.top)
-                if !progressDetails.isEmpty {
-                    ForEach(progressDetails, id: \.self) { detail in
-                        Text("• \(detail)")
-                            .padding(.leading)
+
+                if let imageURL = imageURL {
+                    AsyncImage(url: imageURL) { phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 200)
+                                .padding()
+                        } else if phase.error != nil {
+                            Text("Failed to load image")
+                                .foregroundColor(.red)
+                                .padding()
+                        } else {
+                            ProgressView()
+                                .frame(height: 200)
+                                .padding()
+                        }
                     }
                 }
-            }
 
-            TextField("Add Progress Details", text: $newProgressDetail)
+                VStack(alignment: .leading) {
+                    Text("Progress Details:")
+                        .font(.headline)
+                        .padding(.top)
+                    if !progressDetails.isEmpty {
+                        ForEach(progressDetails, id: \.self) { detail in
+                            Text("• \(detail)")
+                                .padding(.leading)
+                        }
+                    }
+                }
                 .padding()
-                .border(Color.gray, width: 1)
-                .padding()
 
-            Button(action: {
-                showImagePicker.toggle()
-            }) {
-                Text("Attach Picture")
-            }
-            .padding()
-
-            Button(action: submitProgress) {
-                Text("Submit Progress")
-                    .font(.headline)
+                TextField("Add Progress Details", text: $newProgressDetail)
                     .padding()
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .border(Color.gray, width: 1)
+                    .padding()
+
+                Button(action: {
+                    showImagePicker.toggle()
+                }) {
+                    Text("Attach Picture")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .padding()
+
+                Button(action: submitProgress) {
+                    Text("Submit Progress")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .padding()
+
+                Spacer()
             }
             .padding()
         }
