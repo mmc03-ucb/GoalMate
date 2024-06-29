@@ -1,10 +1,3 @@
-//
-//  LoginView.swift
-//  GoalMate
-//
-//  Created by MUQUEET MOHSEN CHOWDHURY on 29/6/24.
-//
-
 import SwiftUI
 import FirebaseAuth
 
@@ -15,42 +8,65 @@ struct LoginView: View {
     @State private var errorMessage = ""
 
     var body: some View {
-        VStack {
-            TextField("Email", text: $email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+        NavigationView {
+            VStack {
+                TextField("Email", text: $email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                SecureField("Password", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+
+                if !errorMessage.isEmpty {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+
+                Button(action: login) {
+                    Text("Login")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding()
+                }
+
+                Button(action: {
+                    loginWithTestCredentials(email: "test@test.com", password: "test12")
+                }) {
+                    Text("Test Login 1")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding()
+                }
+
+                Button(action: {
+                    loginWithTestCredentials(email: "test2@test.com", password: "test12")
+                }) {
+                    Text("Test Login 2")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding()
+                }
+
+                NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn)) {
+                    Text("Don't have an account? Sign Up")
+                        .foregroundColor(.blue)
+                }
                 .padding()
-                .keyboardType(.emailAddress)
-                .autocapitalization(.none)
-            SecureField("Password", text: $password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-
-            if !errorMessage.isEmpty {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .padding()
-            }
-
-            Button(action: login) {
-                Text("Login")
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding()
-            }
-
-            Button(action: {
-                // Navigate to the signup view
-                // Implement navigation logic here if necessary
-            }) {
-                Text("Don't have an account? Sign Up")
-                    .foregroundColor(.blue)
             }
             .padding()
         }
-        .padding()
     }
 
     private func login() {
@@ -61,6 +77,12 @@ struct LoginView: View {
                 isLoggedIn = true
             }
         }
+    }
+
+    private func loginWithTestCredentials(email: String, password: String) {
+        self.email = email
+        self.password = password
+        login()
     }
 }
 

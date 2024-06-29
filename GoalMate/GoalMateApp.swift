@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseFirestore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
@@ -20,15 +21,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct GoalMateApp: App {
     // Register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @State private var isLoggedIn = false
 
     var body: some Scene {
         WindowGroup {
-            if isLoggedIn {
-                MainView(isLoggedIn: $isLoggedIn)
-            } else {
-                LoginView(isLoggedIn: $isLoggedIn)
+            NavigationView {
+                ContentView()
             }
         }
     }
 }
+

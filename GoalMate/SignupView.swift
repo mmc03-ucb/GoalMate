@@ -32,13 +32,13 @@ struct SignUpView: View {
             SecureField("Confirm Password", text: $confirmPassword)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
-            
+
             if !errorMessage.isEmpty {
                 Text(errorMessage)
                     .foregroundColor(.red)
                     .padding()
             }
-            
+
             Button(action: signUp) {
                 Text("Sign Up")
                     .frame(minWidth: 0, maxWidth: .infinity)
@@ -48,11 +48,8 @@ struct SignUpView: View {
                     .cornerRadius(10)
                     .padding()
             }
-            
-            Button(action: {
-                // Navigate to the login view
-                // Implement navigation logic here if necessary
-            }) {
+
+            NavigationLink(destination: LoginView(isLoggedIn: $isLoggedIn)) {
                 Text("Already have an account? Log In")
                     .foregroundColor(.blue)
             }

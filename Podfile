@@ -8,6 +8,7 @@ target 'GoalMate' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
   target 'GoalMateTests' do
     inherit! :search_paths
