@@ -16,7 +16,7 @@ struct AddGoalView: View {
     @State private var amount: String = ""
     @Environment(\.presentationMode) var presentationMode
 
-    let goalTypes = ["Fitness", "Nutrition", "Mindfulness"]
+    let goalTypes = ["Fitness", "Nutrition", "Mindfulness", "Other"]
 
     var body: some View {
         NavigationView {
@@ -31,17 +31,37 @@ struct AddGoalView: View {
                 }
 
                 Section(header: Text("Goal Details")) {
-                    TextField("Title", text: $title)
-                    TextField("Details", text: $details)
+                    HStack {
+                        Image(systemName: "textformat")
+                            .foregroundColor(.gray)
+                        TextField("Title", text: $title)
+                            .padding(.leading, 5)
+                    }
+                    HStack {
+                        Image(systemName: "doc.text")
+                            .foregroundColor(.gray)
+                        TextField("Details", text: $details)
+                            .padding(.leading, 5)
+                    }
                 }
 
                 Section(header: Text("Tracker Information")) {
-                    TextField("Track by Email", text: $trackerEmail)
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                        .textInputAutocapitalization(.never)
-                    TextField("Amount", text: $amount)
-                        .keyboardType(.decimalPad)
+                    HStack {
+                        Image(systemName: "envelope")
+                            .foregroundColor(.gray)
+                        TextField("Track by Email", text: $trackerEmail)
+                            .keyboardType(.emailAddress)
+                            .autocapitalization(.none)
+                            .textInputAutocapitalization(.never)
+                            .padding(.leading, 5)
+                    }
+                    HStack {
+                        Image(systemName: "dollarsign.circle")
+                            .foregroundColor(.gray)
+                        TextField("Amount", text: $amount)
+                            .keyboardType(.decimalPad)
+                            .padding(.leading, 5)
+                    }
                 }
 
                 Button(action: addGoal) {
@@ -52,8 +72,9 @@ struct AddGoalView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+                .padding(.top)
             }
-            .navigationBarTitle("Add a Goal")
+            .navigationBarTitle("Add a Goal", displayMode: .inline)
             .navigationBarItems(trailing: Button("Cancel") {
                 presentationMode.wrappedValue.dismiss()
             })
@@ -84,5 +105,11 @@ struct AddGoalView: View {
                 print("Error adding goal: \(error)")
             }
         }
+    }
+}
+
+struct AddGoalView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddGoalView()
     }
 }

@@ -10,42 +10,46 @@ struct GoalDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 16) {
                 Text(goal.title)
                     .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 10)
 
-                if let imageURL = imageURL {
-                    AsyncImage(url: imageURL) { phase in
-                        if let image = phase.image {
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 200)
-                                .padding()
-                        } else if phase.error != nil {
-                            Text("Failed to load image")
-                                .foregroundColor(.red)
-                                .padding()
-                        }
-                    }
-                }
+                // Commented image part
+//                if let imageURL = imageURL {
+//                    AsyncImage(url: imageURL) { phase in
+//                        if let image = phase.image {
+//                            image
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(height: 200)
+//                                .padding()
+//                        } else if phase.error != nil {
+//                            Text("Failed to load image")
+//                                .foregroundColor(.red)
+//                                .padding()
+//                        }
+//                    }
+//                }
 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 10) {
                     Text("Progress:")
                         .font(.headline)
                     if !progressDetails.isEmpty {
                         ForEach(progressDetails, id: \.self) { detail in
-                            Text(" \(detail)")
+                            Text("• \(detail)")
                                 .padding(.leading)
                         }
                     }
                 }
-                .padding()
+                .padding(.horizontal)
 
                 TextField("Add Progress Details", text: $newProgressDetail)
                     .padding()
-                    .border(Color.gray, width: 1)
-                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
+                    .padding(.horizontal)
 
                 Button(action: {
                     showImagePicker.toggle()
@@ -57,7 +61,7 @@ struct GoalDetailView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
-                .padding()
+                .padding(.horizontal)
 
                 Button(action: submitProgress) {
                     Text("Submit Progress")
@@ -68,7 +72,7 @@ struct GoalDetailView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
-                .padding()
+                .padding(.horizontal)
 
                 Spacer()
             }
@@ -101,5 +105,11 @@ struct GoalDetailView: View {
                 print("Error updating progress: \(error)")
             }
         }
+    }
+}
+
+struct GoalDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        GoalDetailView(goal: Goal(id: "1", title: "Test Goal", type: "Fitness", details: "Some details", trackerEmail: "test@example.com", amount: 100.0, isActive: true, userId: "user1", isCompletedByTracker: false, isCompleted: false, progressDetails: ["Initial progress"], imageURL: nil))
     }
 }
