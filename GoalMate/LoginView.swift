@@ -42,29 +42,29 @@ struct LoginView: View {
                     .padding()
             }
 
-            Button(action: {
-                loginWithTestCredentials(email: "test@test.com", password: "test12")
-            }) {
-                Text("Test Login 1")
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .background(Color.gray)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding()
-            }
-
-            Button(action: {
-                loginWithTestCredentials(email: "test2@test.com", password: "test12")
-            }) {
-                Text("Test Login 2")
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .background(Color.gray)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding()
-            }
+//            Button(action: {
+//                loginWithTestCredentials(email: "test@test.com", password: "test12")
+//            }) {
+//                Text("Test Login 1")
+//                    .frame(minWidth: 0, maxWidth: .infinity)
+//                    .padding()
+//                    .background(Color.gray)
+//                    .foregroundColor(.white)
+//                    .cornerRadius(10)
+//                    .padding()
+//            }
+//
+//            Button(action: {
+//                loginWithTestCredentials(email: "test2@test.com", password: "test12")
+//            }) {
+//                Text("Test Login 2")
+//                    .frame(minWidth: 0, maxWidth: .infinity)
+//                    .padding()
+//                    .background(Color.gray)
+//                    .foregroundColor(.white)
+//                    .cornerRadius(10)
+//                    .padding()
+//            }
 
             NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn,showSignUp: $showSignUp)) {
                 Text("Don't have an account? Sign Up")
