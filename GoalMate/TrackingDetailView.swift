@@ -9,50 +9,58 @@ struct TrackingDetailView: View {
     @State private var progressDetails: [String] = []
 
     var body: some View {
-        VStack {
-            Text(goal.title)
-                .font(.largeTitle)
-                .padding()
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                Text(goal.title)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.horizontal)
 
-            if let imageURL = imageURL {
-                AsyncImage(url: imageURL) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 200)
-                            .padding()
-                    } else if phase.error != nil {
-                        Text("Failed to load image")
-                            .foregroundColor(.red)
-                            .padding()
-                    } else {
-                        ProgressView()
-                            .frame(height: 200)
-                            .padding()
+                if let imageURL = imageURL {
+                    AsyncImage(url: imageURL) { phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 200)
+                                .cornerRadius(10)
+                                .padding()
+                        } else if phase.error != nil {
+                            Text("Failed to load image")
+                                .foregroundColor(.red)
+                                .padding()
+                        } else {
+                            ProgressView()
+                                .frame(height: 200)
+                                .padding()
+                        }
                     }
                 }
-            }
 
-            VStack(alignment: .leading) {
-                Text("Progress:")
-                    .font(.headline)
-                    .padding(.top)
-                if !progressDetails.isEmpty {
-                    ForEach(progressDetails, id: \.self) { detail in
-                        Text("\(detail)")
-                            .padding(.leading)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Progress:")
+                        .font(.headline)
+                    if !progressDetails.isEmpty {
+                        ForEach(progressDetails, id: \.self) { detail in
+                            Text("• \(detail)")
+                                .padding(.leading)
+                        }
                     }
                 }
-            }
+                .padding(.horizontal)
 
-            Button(action: markAsComplete) {
-                Text("Mark as Complete")
-                    .font(.headline)
-                    .padding()
-                    .background(Color.green)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                Button(action: markAsComplete) {
+                    Text("Mark as Complete")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .padding(.horizontal)
+
+                Spacer()
             }
             .padding()
         }
@@ -83,5 +91,11 @@ struct TrackingDetailView: View {
                 print("Error marking goal as complete: \(error)")
             }
         }
+    }
+}
+
+struct TrackingDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        TrackingDetailView(goal: Goal(id: "1", title: "Test Goal", type: "Fitness", details: "Some details", trackerEmail: "test@example.com", amount: 100.0, isActive: true, userId: "user1", isCompletedByTracker: false, isCompleted: false, progressDetails: ["Initial progress"], imageURL: nil))
     }
 }
