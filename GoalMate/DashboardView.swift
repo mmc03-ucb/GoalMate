@@ -13,64 +13,65 @@ struct DashboardView: View {
     @State private var listener: ListenerRegistration?
 
     var body: some View {
-        NavigationView {
-            GeometryReader { geometry in
-                VStack {
-                    List {
-                        Section(header: Text("Active Goals")) {
-                            ForEach(activeGoals) { goal in
-                                NavigationLink(destination: GoalDetailView(goal: goal)) {
+            NavigationView {
+                GeometryReader { geometry in
+                    VStack {
+                        List {
+                            Section(header: Text("Active Goals")) {
+                                ForEach(activeGoals) { goal in
+                                    NavigationLink(destination: GoalDetailView(goal: goal)) {
+                                        Text(goal.title)
+                                    }
+                                }
+                            }
+
+                            Section(header: Text("Completed Goals")) {
+                                ForEach(completedGoals) { goal in
                                     Text(goal.title)
                                 }
                             }
-                        }
 
-                        Section(header: Text("Completed Goals")) {
-                            ForEach(completedGoals) { goal in
-                                Text(goal.title)
+                            Section(header: Text("Tracking Requests")) {
+                                ForEach(trackingRequests) { request in
+                                    NavigationLink(destination: TrackingDetailView(goal: request)) {
+                                        Text(request.title)
+                                    }
+                                }
                             }
-                        }
 
-                        Section(header: Text("Tracking Requests")) {
-                            ForEach(trackingRequests) { request in
-                                NavigationLink(destination: TrackingDetailView(goal: request)) {
+                            Section(header: Text("Requests Tracked")) {
+                                ForEach(trackedRequests) { request in
                                     Text(request.title)
                                 }
                             }
                         }
-
-                        Section(header: Text("Requests Tracked")) {
-                            ForEach(trackedRequests) { request in
-                                Text(request.title)
-                            }
-                        }
+                        .listStyle(GroupedListStyle())
+                        .frame(width: geometry.size.width)
+                        .padding(.top, -50)
                     }
-                    .listStyle(GroupedListStyle())
-                    .frame(width: geometry.size.width, height: geometry.size.height)
+                }
+                .navigationBarTitle("Dashboard", displayMode: .inline)
+                .navigationBarItems(leading: Button(action: logout) {
+                    Text("Logout")
+                        .foregroundColor(.red)
+                }, trailing: Button(action: {
+                    showAddGoalView.toggle()
+                }) {
+                    Image(systemName: "plus")
+                })
+                .sheet(isPresented: $showAddGoalView) {
+                    AddGoalView()
+                }
+                .onAppear {
+                    fetchGoals()
+                    setupListener()
+                }
+                .onDisappear {
+                    listener?.remove()
                 }
             }
-            .navigationBarTitle("Dashboard", displayMode: .inline)
-            .navigationBarItems(leading: Button(action: logout) {
-                Text("Logout")
-                    .foregroundColor(.red)
-            }, trailing: Button(action: {
-                showAddGoalView.toggle()
-            }) {
-                Image(systemName: "plus")
-            })
-            .sheet(isPresented: $showAddGoalView) {
-                AddGoalView()
-            }
-            .onAppear {
-                fetchGoals()
-                setupListener()
-            }
-            .onDisappear {
-                listener?.remove()
-            }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationViewStyle(StackNavigationViewStyle()) // Ensures proper scaling on all devices
-    }
 
     private func logout() {
         do {
