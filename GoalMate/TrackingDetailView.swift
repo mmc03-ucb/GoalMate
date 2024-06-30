@@ -35,21 +35,16 @@ struct TrackingDetailView: View {
             }
 
             VStack(alignment: .leading) {
-                Text("Progress Details:")
+                Text("Progress:")
                     .font(.headline)
                     .padding(.top)
                 if !progressDetails.isEmpty {
                     ForEach(progressDetails, id: \.self) { detail in
-                        Text("• \(detail)")
+                        Text("\(detail)")
                             .padding(.leading)
                     }
                 }
             }
-
-            TextField("Add Progress Details", text: $newProgressDetail)
-                .padding()
-                .border(Color.gray, width: 1)
-                .padding()
 
             Button(action: markAsComplete) {
                 Text("Mark as Complete")

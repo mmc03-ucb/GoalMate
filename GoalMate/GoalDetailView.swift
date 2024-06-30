@@ -13,7 +13,6 @@ struct GoalDetailView: View {
             VStack(alignment: .leading) {
                 Text(goal.title)
                     .font(.largeTitle)
-                    .padding(.top)
 
                 if let imageURL = imageURL {
                     AsyncImage(url: imageURL) { phase in
@@ -27,21 +26,16 @@ struct GoalDetailView: View {
                             Text("Failed to load image")
                                 .foregroundColor(.red)
                                 .padding()
-                        } else {
-                            ProgressView()
-                                .frame(height: 200)
-                                .padding()
                         }
                     }
                 }
 
                 VStack(alignment: .leading) {
-                    Text("Progress Details:")
+                    Text("Progress:")
                         .font(.headline)
-                        .padding(.top)
                     if !progressDetails.isEmpty {
                         ForEach(progressDetails, id: \.self) { detail in
-                            Text("• \(detail)")
+                            Text(" \(detail)")
                                 .padding(.leading)
                         }
                     }
